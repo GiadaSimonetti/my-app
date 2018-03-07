@@ -2,6 +2,36 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
+class CommentForm extends React.Component {
+  render() {
+    return (
+      <form className="comment-form">
+        <label>Join the discussion</label>
+        <br />
+        <div className="comment-form-fields">
+          <input placeholder="Name:" ref={input => (this._author = input)} />
+          <br />
+          <br />
+          <textarea
+            placeholder="Comment:"
+            ref={input => (this._body = input)}
+          />
+          <br />
+        </div>
+        <div className="comment-form-actions">
+          <button type="submit">Post comment</button>
+        </div>
+      </form>
+    );
+  }
+  // _handleSubmit(event) {
+  //   event.preventDefault();
+  //   let author = this._author;
+  //   let body = this._body;
+  //   this.props.addComment(author.value, body.value);
+  // }
+}
+
 class Comment extends React.Component {
   render() {
     return (
