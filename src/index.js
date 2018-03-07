@@ -38,6 +38,7 @@ class CommentBox extends React.Component {
         <h4 className="comment-count">
           {this._getCommentsTitle(comments.length)}
         </h4>
+        <button onClick={this._handleClick.bind(this)}>Show comments</button>
         {commentNodes}
       </div>
     );
@@ -61,6 +62,11 @@ class CommentBox extends React.Component {
     } else {
       return commentCount + " comments";
     }
+  }
+  _handleClick() {
+    this.setState({
+      showComments: !this.state.showComments
+    });
   }
 }
 
