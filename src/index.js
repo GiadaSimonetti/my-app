@@ -20,6 +20,11 @@ class Comment extends React.Component {
 
 class CommentBox extends React.Component {
   render() {
+    if (this.state.showComments) {
+      // code displaying comments
+    } else {
+      // this.setState({showComments: true })
+    }
     const comments = this._getComments();
     return (
       <div className="comment-box">
