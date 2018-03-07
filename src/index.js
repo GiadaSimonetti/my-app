@@ -28,7 +28,9 @@ class CommentBox extends React.Component {
   render() {
     const comments = this._getComments();
     let commentNodes;
+    let buttonText = "Show comments";
     if (this.state.showComments) {
+      buttonText = "Hide comments";
       commentNodes = <div className="comment-list">{comments}</div>;
     } else {
       // this.setState({showComments: true })
@@ -38,7 +40,7 @@ class CommentBox extends React.Component {
         <h4 className="comment-count">
           {this._getCommentsTitle(comments.length)}
         </h4>
-        <button onClick={this._handleClick.bind(this)}>Show comments</button>
+        <button onClick={this._handleClick.bind(this)}>{buttonText}</button>
         {commentNodes}
       </div>
     );
